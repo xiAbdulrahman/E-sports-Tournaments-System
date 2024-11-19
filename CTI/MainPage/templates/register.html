@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+       {% load static %}
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link href="{% static 'styleRegister.css' %}" rel="stylesheet" type="text/css" />
+
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styleRegister.css" />
+    <title>Register</title>
+  </head>
+  <body>
+    <img class="logo" src="../static/Logo.png" />
+
+    <! –– ---------------------------Main buttons----------------------------------------- ––>
+     <a href="{% url 'main' %}">
+    <button class="HomeB">Home</button>
+    </a>
+
+    <a href="https://discord.gg/cquGsUXrcJ">
+    <button class="DiscordB">Discord</button>
+      </a>
+
+    {% if user.is_authenticated %}
+    <div class="dropdown">
+        <button class="AccountB dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            Account
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="{% url 'myTeam' %}">My Team</a></li>
+            <li><a class="dropdown-item" href="{% url 'logout' %}">Sign Out</a></li>
+        </ul>
+    </div>
+    {% else %}
+    <div class="dropdown">
+        <button class="AccountB dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+            Account
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
+            <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
+        </ul>
+    </div>
+    {% endif %}
+
+    <! –– -----------------------------Register Stage--------------------------------------- ––>
+
+    <!-- Register Form -->
+    <form method="post" class="RegisterSquare" style="width: 514px; height: 798px; left: 713px; top: 190px; position: absolute">
+        {% csrf_token %}
+        <div class="Rectangle6" style="width: 514px; height: 798px; left: 0px; top: 0px; position: absolute; background: rgba(45.52, 74.18, 96.69, 0.95); border-radius: 144px"></div>
+
+        <!-- Error message -->
+        {% if error %}
+            <p style="color: red; position: absolute; top: 10px; left:155px">{{ error }}</p>
+        {% endif %}
+
+        <!-- Username -->
+        <div class="UsernameLabel" style="width: 128px; height: 31.09px; left: 64px; top: 117.83px; position: absolute; color: white; font-size: 20px; font-family: Jura; font-weight: 700; word-wrap: break-word">Username</div>
+        <input type="text" class="UsernameTextbox" name="username" placeholder="Username" style="width: 417px; height: 60px; padding: 10px; left: 51px; top: 148.99px; position: absolute; background: white; border-top-right-radius: 100px;  border-bottom-left-radius: 100px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+
+        <!-- Email -->
+        <div class="EmailLabel" style="width: 118px; height: 31.09px; left: 63px; top: 266.82px; position: absolute; color: white; font-size: 20px; font-family: Jura; font-weight: 700; word-wrap: break-word">E-mail</div>
+        <input type="email" class="EmailTextbox" name="email" placeholder="Email" style="width: 417px; height: 60px; padding: 10px; left: 51px; top: 297.99px; position: absolute; background: white; border-top-right-radius: 100px;  border-bottom-left-radius: 100px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+
+        <!-- Password -->
+        <div class="PasswordLabel" style="width: 118px; height: 31.09px; left: 63px; top: 408.03px; position: absolute; color: white; font-size: 20px; font-family: Jura; font-weight: 700; word-wrap: break-word">Password</div>
+        <input type="password" name="password1" class="Password" placeholder="Password" style="width: 417px;  height: 60px; padding: 10px; left: 51px; top: 439.19px; position: absolute; background: white;  border-top-right-radius: 100px; border-bottom-left-radius: 100px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+
+        <!-- Rewrite Password -->
+        <div class="RewritePassword" style="width: 189px;  height: 31.16px; left: 63px; top: 549.23px; position: absolute; color: white; font-size: 20px; font-family: Jura; font-weight: 700; word-wrap: break-word">Rewrite Password</div>
+        <input type="password" class="RewritePasswordBox" name="password2" placeholder="Rewrite Passoword" style="width: 417px;  height: 60px; padding: 10px; left: 51px; top: 580.39px; position: absolute; background: white; border-top-right-radius: 100px;  border-bottom-left-radius: 100px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+
+        <!-- Register Button -->
+        <div class="Register" style="width: 156px; height: 88.62px; left: 181px; top: 51.61px; position: absolute; color: white; font-size: 36px; font-family: Jura; font-weight: 700; word-wrap: break-word">Register</div>
+        <button type="submit" class="RegistersB" style="width: 220px; height: 78.88px; padding: 10px; left: 149px; top: 690.43px; position: absolute; background: #081621; border-radius: 100px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">Register</button>
+    </form>
+
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

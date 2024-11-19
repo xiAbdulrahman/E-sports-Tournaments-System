@@ -1,0 +1,127 @@
+body{
+  background-color: #B1D0E0;
+
+  background-image: url("Blur main background.png");
+}
+
+.logo {
+  width: 188px;
+  height: 169px;
+  position: absolute;
+  left: 29px;
+  top: 21px;
+  object-fit: cover;
+}
+
+.AccountB{
+   color: #ffffff;
+   border: 0.16em solid rgba(255, 255, 255, 0);
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+  background: #0b3550;
+  border-radius: 100px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 167px;
+  height: 38px;
+  position: absolute;
+  left: 1609px;
+  top: 70px;
+}
+.AccountB:hover {
+  transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+}
+.dropdown-item{
+    font-size: 20px;
+  }
+
+.DiscordB{
+  color: #ffffff;
+  border: 0.16em solid rgba(255, 255, 255, 0);
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+  background: #0b3550;
+  border-radius: 100px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 167px;
+  height: 38px;
+  position: absolute;
+  left: 1390px;
+  top: 70px;
+}
+
+.DiscordB:hover {
+  transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+}
+
+.HomeB{
+  color: #0b3550;
+  border: 0.16em solid rgba(255, 255, 255, 0);
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+  background: #f3faff;
+  border-radius: 100px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 167px;
+  height: 38px;
+  position: absolute;
+  left: 1171px;
+  top: 70px;
+}
+.HomeB:hover {
+  transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+}
+
+.UsernameTextbox{
+    border: 0.16em solid rgba(255, 255, 255, 0);
+  font-size:24px;
+      text-align: center;
+
+}
+.PasswordTextbox{
+   border: 0.16em solid rgba(255, 255, 255, 0);
+  font-size:24px;
+      text-align: center;
+    text-decoration-color: #081621;
+
+}
+
+.LoginButton{
+    border: 0.16em solid rgba(255, 255, 255, 0);
+    color: #ffffff;
+    font-size: 24px;
+}
+.LoginButton:hover {
+   transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+}
+
+.ForgotPassword:hover{
+     transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+}
+
+.RegisterAccount:hover{
+     transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+}

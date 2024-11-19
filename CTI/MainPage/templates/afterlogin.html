@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+
+<html lang="">
+  <head>
+
+    <meta charset="utf-8" />
+    <title>CTI</title>
+     {% load static %}
+          <link href="{% static 'styleAL.css' %}" rel="stylesheet" type="text/css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <img class="logo" src="{% static 'logo.png' %}" />
+
+    <! –– ---------------------------Main buttons----------------------------------------- ––>
+    <a href="{% url 'main' %}">
+    <button class="HomeB">Home</button>
+    </a>
+
+    <a href="https://discord.gg/cquGsUXrcJ">
+    <button class="DiscordB">Discord</button>
+      </a>
+
+    {% if user.is_authenticated %}
+    <div class="dropdown">
+        <button class="AccountB dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            Account
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="{% url 'myTeam' %}">My Team</a></li>
+            <li><a class="dropdown-item" href="{% url 'logout' %}">Sign Out</a></li>
+        </ul>
+    </div>
+    {% else %}
+    <div class="dropdown">
+        <button class="AccountB dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+            Account
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
+            <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
+        </ul>
+    </div>
+    {% endif %}
+
+    <! –– -----------------------------afterLogin Stage--------------------------------------- ––>
+
+    <div class="LoginSquare" style="width: 523px; height: 631px; left: 729px; top: 272px; position: absolute">
+
+        <div class="Rectangle6" style="width: 523px; height: 631px; left: 0px; top: 0px; position: absolute; background: rgba(45.52, 74.18, 96.69, 0.95); border-radius: 144px"></div>
+
+
+
+        {% if user.is_inTeam %}
+
+      <a href="{% url 'myTeam' %}">
+      <button class="MyTeamB" style="width: 376px; height: 123px; padding: 10px; left: 70px; top: 81px; position: absolute; background: linear-gradient(0deg, #081621 0%, #081621 100%), linear-gradient(0deg, #081621 0%, #081621 100%); border-radius: 100px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+          My Team</button></a>
+
+        <a href="{% url 'main' %}">
+      <button class="Home" style="width: 376px; height: 123px; padding: 10px; left: 70px; top: 235px; position: absolute; background: linear-gradient(0deg, #081621 0%, #081621 100%), linear-gradient(0deg, #081621 0%, #081621 100%); border-radius: 100px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+          Home </button></a>
+
+
+        {% else %}
+        <a href="{% url 'createTeam' %}">
+      <button class="CreateTeam" style="width: 376px; height: 123px; padding: 10px; left: 70px; top: 81px; position: absolute; background: linear-gradient(0deg, #081621 0%, #081621 100%), linear-gradient(0deg, #081621 0%, #081621 100%); border-radius: 100px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+      Create Team</button></a>
+
+       <a href="{% url 'joinTeam' %}">
+      <button class="JoinTeam" style="width: 376px; height: 123px; padding: 10px; left: 70px; top: 235px; position: absolute; background: linear-gradient(0deg, #081621 0%, #081621 100%), linear-gradient(0deg, #081621 0%, #081621 100%); border-radius: 100px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+      Join Team</button></a>
+
+      <a href="{% url 'main' %}">
+      <button class="Home" style="width: 376px; height: 123px; padding: 10px; left: 70px; top: 395px; position: absolute; background: linear-gradient(0deg, #081621 0%, #081621 100%), linear-gradient(0deg, #081621 0%, #081621 100%); border-radius: 100px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+          Home </button></a>
+        {% endif %}
+
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

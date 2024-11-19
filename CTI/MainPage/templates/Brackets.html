@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="{% static 'styleB.css' %}" rel="stylesheet" type="text/css" />
+      <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
+
+    <meta charset="utf-8" />
+    <title>Brackets</title>
+  </head>
+
+
+    <! –– -----------------------------------Main Buttons----------------------------------------------- ––>
+  <body>
+    <img class="logo" src="{% static 'Logo.png'%}" />
+
+     <a href="{% url 'main' %}">
+    <button class="HomeB">Home</button>
+    </a>
+
+    <a href="https://discord.gg/cquGsUXrcJ">
+    <button class="DiscordB">Discord</button>
+      </a>
+
+    {% if user.is_authenticated %}
+    <div class="dropdown">
+        <button class="AccountB dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            Account
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="{% url 'myTeam' %}">My Team</a></li>
+            <li><a class="dropdown-item" href="{% url 'logout' %}">Sign Out</a></li>
+        </ul>
+    </div>
+    {% else %}
+     <div class="dropdown">
+        <button class="AccountB dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+            Account
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
+            <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
+        </ul>
+        </div>
+        {% endif %}
+         <! –– --------------------------------------------------------------------------------------------------- ––>
+
+<div class="Round1">
+
+  <div class="Matchup1">
+  <label class="Team1" style="left: 239px; top: 234px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round1match1.team1.team_name}}</label>
+  <label class="Team2" style="left: 240px; top: 277px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round1match1.team2.team_name}}</label>
+  <label class="Round1Match1Time" style="left: 135px; top: 205px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round1match1.match_start_date}}</label>
+  <label class="info1" style="left: 212px; top: 324px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">Round 1 - Match 1</label>
+  </div>
+
+  <div class="Matchup2">
+  <label class="Team3" style="left: 240px; top: 439px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round1match2.team1.team_name}}</label>
+  <label class="Team4" style="left: 241px; top: 482px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round1match2.team2.team_name}}</label>
+  <label class="info2" style="left: 212px; top: 529px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">Round 1 - Match 2</label>
+  <label class="Round1Match2time" style="left: 135px; top: 408px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round1match2.match_start_date}}</label>
+  </div>
+
+  <div class="Matchup3">
+  <label class="Team5" style="left: 241px; top: 644px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round1match3.team1.team_name}}</label>
+  <label class="Team6" style="left: 241px; top: 696px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round1match3.team2.team_name}}</label>
+  <label class="info3" style="left: 212px; top: 734px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">Round 1 - Match 3</label>
+  <label class="Round1Match3time" style="left: 135px; top: 611px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round1match3.match_start_date}}</label>
+  </div>
+
+  <div class="Matchup4">
+  <label class="Team7" style="left: 241px; top: 845px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round1match4.team1.team_name}}</label>
+  <label class="Team8" style="left: 241px; top: 890px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round1match4.team2.team_name}}</label>
+  <label class="info4" style="left: 212px; top: 933px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">Round 1 - Match 4</label>
+  <label class="Round1Match4time" style="left: 135px; top: 809px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round1match4.match_start_date}}</label>
+  </div>
+
+  <div class="Matchup5">
+  <label class="Team9" style="left: 241px; top: 1043px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round1match5.team1.team_name}}</label>
+  <label class="Team10" style="left: 241px; top: 1089px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round1match5.team2.team_name}}</label>
+  <label class="info5" style="left: 212px; top: 1134px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">Round 1 - Match 5</label>
+  <label class="Round1Match5time" style="left: 135px; top: 1010px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round1match5.match_start_date}}</label>
+  </div>
+
+  <div class="Matchup6">
+  <label class="Team11" style="left: 241px; top: 1233px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round1match6.team1.team_name}}</label>
+  <label class="Team12" style="left: 241px; top: 1278px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round1match6.team2.team_name}}</label>
+  <label class="info6" style="left: 212px; top: 1324px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">Round 1 - Match 6</label>
+  <label class="Round1Match6time" style="left: 135px; top: 1203px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round1match6.match_start_date}}</label>
+  </div>
+
+  <div class="Matchup7">
+  <label class="Team13" style="left: 241px; top: 1438px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round1match7.team1.team_name}}</label>
+  <label class="Team14" style="left: 243px; top: 1485px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round1match7.team2.team_name}}</label>
+  <label class="info7" style="left: 212px; top: 1534px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">Round 1 - Match 7</label>
+  <label class="Round1Match7time" style="left: 135px; top: 1411px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round1match7.match_start_date}}</label>
+  </div>
+
+  <div class="Matchup8">
+  <label class="Team15" style="left: 243px; top: 1651px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round1match8.team1.team_name}}</label>
+  <label class="Team16" style="left: 243px; top: 1698px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round1match8.team2.team_name}}</label>
+  <label class="info8" style="left: 212px; top: 1744px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">Round 1 - Match 8</label>
+  <label class="Round1Match8time" style="left: 135px; top: 1619px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round1match8.match_start_date}}</label>
+  </div>
+
+</div>
+
+
+<div class="Round2">
+
+  <div class="Matchup21">
+  <label class="Match1winner" style="left: 642px; top: 335px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round2match1.team1.team_name}}</label>
+  <label class="Match2winner" style="left: 642px; top: 380px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round2match1.team2.team_name}}</label>
+  <label class="info21" style="left: 648px; top: 426px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">Round 2 - Match 1</label>
+  <label class="Round2Match1time" style="left: 568px; top: 301px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round2match1.match_start_date}}</label>
+  </div>
+
+  <div class="Matchup22">
+  <label class="Match3winner" style="left: 642px; top: 739px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round2match2.team1.team_name}}</label>
+  <label class="Match4winner" style="left: 642px; top: 784px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round2match2.team2.team_name}}</label>
+  <label class="info22" style="left: 648px; top: 831px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">Round 2 - Match 2</label>
+  <label class="Round2Match2time" style="left: 567px; top: 704px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round2match2.match_start_date}}</label>
+  </div>
+
+  <div class="Matchup23">
+  <label class="Match5winner" style="left: 642px; top: 1143px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round2match3.team1.team_name}}</label>
+  <label class="Match6winner" style="left: 642px; top: 1188px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round2match3.team2.team_name}}</label>
+  <label class="info23" style="left: 648px; top: 1238px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">Round 2 - Match 3</label>
+  <label class="Round2Match3time" style="left: 566px; top: 1107px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round2match3.match_start_date}}</label>
+  </div>
+
+  <div class="Matchup24">
+  <label class="Match7winner" style="left: 614px; top: 1553px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round2match4.team1.team_name}}</label>
+  <label class="Match8winner" style="left: 614px; top: 1598px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round2match4.team2.team_name}}</label>
+  <label class="info24" style="left: 617px; top: 1643px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">Round 2 - Match 4</label>
+  <label class="Round2Match4time" style="left: 544px; top: 1513px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round2match4.match_start_date}}</label>
+  </div>
+
+</div>
+
+
+<div class="Round3">
+
+  <div class="Matchup31">
+  <label class="R2m1winner" style="left: 1058px; top: 532px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round3match1.team1.team_name}}</label>
+  <label class="R2m2winner" style="left: 1058px; top: 578px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round3match1.team2.team_name}}</label>
+  <label class="Round3Match1" style="left: 1048px; top: 624px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">Round 3 - Match 1</label>
+  <label class="Round3Match1time" style="left: 971px; top: 496px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round3match1.match_start_date}}</label>
+  </div>
+
+  <div class="Matchup32">
+  <label class="R2m3winner" style="left: 1026px; top: 1349px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round3match1.team1.team_name}}</label>
+  <label class="R2m4winner" style="left: 1026px; top: 1395px; position: absolute; color: white; font-size: 24px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round3match2.team2.team_name}}</label>
+  <label class="Round3Match2" style="left: 1025px; top: 1439px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">Round 3 - Match 2</label>
+  <label class="Round3Match2time" style="left: 947px; top: 1313px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round3match2.match_start_date}}</label>
+  </div>
+
+</div>
+
+<div class="Finals">
+  <div class="finalMatchup">
+  <label class="FinalsTime" style="left: 1378px; top: 908px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">{{tournament.round4match1.match_start_date}}</label>
+  <label class="Finalsinfo" style="left: 1511px; top: 1037px; position: absolute; color: white; font-size: 16px; font-family: Jura; font-weight: 700; word-wrap: break-word">Finals</label>
+  <label class="R3m1winner" style="left: 1464px; top: 943px; position: absolute; color: white; font-size: 24px; font-family: Inter; font-weight: 400; word-wrap: break-word">{{tournament.round4match1.team1.team_name}}</label>
+  <label class="R3m2winner" style="left: 1464px; top: 990px; position: absolute; color: white; font-size: 24px; font-family: Inter; font-weight: 400; word-wrap: break-word">{{tournament.round4match1.team2.team_name}}</label>
+  </div>
+</div>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
